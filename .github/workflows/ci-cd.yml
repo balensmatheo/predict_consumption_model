@@ -28,10 +28,10 @@ jobs:
       with:
         context: .
         push: true
-        tags: yourdockerhubusername/predict-consumption-api:latest
+        tags: matheobalens/predict-consumption-api:latest
 
     - name: Run healthcheck (curl API up)
       run: |
-        docker run -d -p 8000:8000 yourdockerhubusername/predict-consumption-api:latest
+        docker run -d -p 8000:8000 matheobalens/predict-consumption-api:latest
         sleep 10
         curl --fail http://localhost:8000/docs || exit 1
